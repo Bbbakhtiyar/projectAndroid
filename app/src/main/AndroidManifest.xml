@@ -20,9 +20,11 @@
         <activity
             android:name="co.baha.fitnesstracker.ImcActivity"
             android:exported="false" />
+        <activity android:name=".WaterTrackerActivity" />
         <activity
             android:name="co.baha.fitnesstracker.MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

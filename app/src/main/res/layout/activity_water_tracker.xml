@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/water_tracker_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter amount of water (in liters)"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edit_water_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Amount in liters"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btn_add_water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Water"
+        android:layout_marginTop="16dp" />
+
+
+</LinearLayout>

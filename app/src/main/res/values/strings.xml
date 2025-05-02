@@ -27,4 +27,5 @@
     <string name="delete_calc_title">Delete the record?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="label_water_tracker">Water Tracker</string>
 </resources>

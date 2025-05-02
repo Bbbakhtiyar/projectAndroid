@@ -6,19 +6,19 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
-@Database(entities = [Calc::class], version = 1)
+@Database(entities = [Calc::class, WaterTracker::class], version = 2)
 @TypeConverters(DateConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun calcDao(): CalcDao
+    abstract fun waterTrackerDao(): WaterTrackerDao
 
     companion object {
 
         private var INSTANCE: AppDatabase? = null
 
-        fun getDatabase(context: Context) : AppDatabase {
+        fun getDatabase(context: Context): AppDatabase {
             return if (INSTANCE == null) {
-
                 synchronized(this) {
                     INSTANCE = Room.databaseBuilder(
                         context.applicationContext,

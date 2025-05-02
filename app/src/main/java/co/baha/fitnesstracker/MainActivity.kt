@@ -36,6 +36,14 @@ class MainActivity : AppCompatActivity() {
                 color = R.color.color4
             )
         )
+        mainItems.add(
+            MainItem(
+                id = 3,
+                drawableId = R.drawable.ic_water, // или ic_launcher_foreground временно
+                textStringId = R.string.label_water_tracker,
+                color = R.color.color4
+            )
+        )
 
         val adapter = MainAdapter(mainItems) { id ->
             when (id) {
@@ -45,6 +53,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 2 -> {
                     val intent = Intent(this@MainActivity, NdcActivity::class.java)
+                    startActivity(intent)
+                }
+                3 -> {
+                    val intent = Intent(this@MainActivity, WaterTrackerActivity::class.java)
                     startActivity(intent)
                 }
             }
