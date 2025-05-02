@@ -21,6 +21,7 @@
             android:name="co.baha.fitnesstracker.ImcActivity"
             android:exported="false" />
         <activity android:name=".WaterTrackerActivity" />
+        <activity android:name=".ExerciseTrackerActivity" />
         <activity
             android:name="co.baha.fitnesstracker.MainActivity"
             android:exported="true">

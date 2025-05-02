@@ -44,6 +44,14 @@ class MainActivity : AppCompatActivity() {
                 color = R.color.color4
             )
         )
+        mainItems.add(
+            MainItem(
+                id = 4,
+                drawableId = R.drawable.check_icon, // добавь подходящую иконку
+                textStringId = R.string.label_exercise_tracker,
+                color = R.color.color4
+            )
+        )
 
         val adapter = MainAdapter(mainItems) { id ->
             when (id) {
@@ -57,6 +65,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 3 -> {
                     val intent = Intent(this@MainActivity, WaterTrackerActivity::class.java)
+                    startActivity(intent)
+                }
+                4 -> {
+                    val intent = Intent(this@MainActivity, ExerciseTrackerActivity::class.java)
                     startActivity(intent)
                 }
             }
