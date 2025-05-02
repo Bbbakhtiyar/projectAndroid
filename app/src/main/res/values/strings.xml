@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Project Fitness Tracker</string>
+    <string name="label_imc">BMI</string>
+    <string name="weight">Weight (kg)</string>
+    <string name="height">Height (cm)</string>
+    <string name="imc_desc">BMI stands for Body Mass Index, which is used to assess an individual</string>
+    <string name="calc">Calculate</string>
+    <string name="fields_message">Fields must be filled and different from zero</string>
+    <string name="imc_severely_low_weight">Severely underweight</string>
+    <string name="imc_very_low_weight">Very underweight</string>
+    <string name="imc_low_weight">Underweight</string>
+    <string name="normal">Normal</string>
+    <string name="imc_high_weight">Overweight</string>
+    <string name="imc_so_high_weight">Moderately obese</string>
+    <string name="imc_severely_high_weight">Severely obese</string>
+    <string name="imc_extreme_weight">Extremely obese</string>
+    <string name="imc_result">BMI: %1$.2f</string>
+    <string name="ndc_result_title">TDEE:</string>
+    <string name="ndc_result">%1$.2f calories</string>
+    <string name="label_ndc">TDEE</string>
+    <string name="ndc_desc">TDEE is the calculation that indicates the Total Daily Energy Expenditure of the body, considering the energy needed to maintain body functions and physical activities performed.\n\nFill in the fields below to find out your TDEE</string>
+    <string name="age">Age (years)</string>
+    <string name="save">Save</string>
+    <string name="list_calc_response">Result: %1$.2f  -  Date: %2$s</string>
+    <string name="search">Records</string>
+    <string name="edit_calc_title">Edit the calculation?</string>
+    <string name="delete_calc_title">Delete the record?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>
