@@ -1,14 +1,8 @@
 # FitnessTracker
 
-Foi desenvolvido para praticar a linguagem Kotlin no curso Android Express. 
+It was developed to practice the Kotlin language in the Android course.
 
+## About the Project
 
-## Sobre o Projeto
-
-O app calcula o Índice de Massa Corporal (IMC) e a Necessidade Diária de Calorias (NDC).  
-Também armazena, edita e exclui esses dados em banco de dados local.
-
-## Layout Mobile
-
-![layoutmobile](https://github.com/geisyanne/FitnessTracker2/blob/main/toreadme.gif)  
+The simple fitness project.
 
