@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         mainItems.add(
             MainItem(
                 id = 3,
-                drawableId = R.drawable.ic_water, // или ic_launcher_foreground временно
+                drawableId = R.drawable.ic_water,
                 textStringId = R.string.label_water_tracker,
                 color = R.color.color4
             )
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         mainItems.add(
             MainItem(
                 id = 4,
-                drawableId = R.drawable.check_icon, // добавь подходящую иконку
+                drawableId = R.drawable.check_icon,
                 textStringId = R.string.label_exercise_tracker,
                 color = R.color.color4
             )

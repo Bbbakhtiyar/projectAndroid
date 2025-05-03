@@ -3,7 +3,7 @@
     <string name="label_imc">BMI</string>
     <string name="weight">Weight (kg)</string>
     <string name="height">Height (cm)</string>
-    <string name="imc_desc">BMI stands for Body Mass Index, which is used to assess an individual</string>
+    <string name="imc_desc">BMI stands for Body Mass Index, used to assess body weight in relation to height. It helps categorize weight as underweight, normal weight, overweight, or obese.</string>
     <string name="calc">Calculate</string>
     <string name="fields_message">Fields must be filled and different from zero</string>
     <string name="imc_severely_low_weight">Severely underweight</string>
