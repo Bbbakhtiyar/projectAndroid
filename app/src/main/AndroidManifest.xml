@@ -10,6 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessTracker">
+        <!-- Добавляем активность LoginActivity -->
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
         <activity
             android:name="co.baha.fitnesstracker.ListCalcActivity"
             android:parentActivityName="co.baha.fitnesstracker.MainActivity"

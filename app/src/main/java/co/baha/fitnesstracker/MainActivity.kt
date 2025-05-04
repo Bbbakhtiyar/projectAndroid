@@ -1,24 +1,51 @@
 package co.baha.fitnesstracker
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import co.baha.fitnesstracker.model.SharedPrefHelper
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var rvMain: RecyclerView
+    private lateinit var sharedPrefHelper: SharedPrefHelper
+    private lateinit var btnLogout: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Инициализация SharedPrefHelper
+        sharedPrefHelper = SharedPrefHelper(this)
+
+        // Проверка состояния авторизации
+        checkLoginStatus()
+
+        // Инициализация кнопки выхода
+        btnLogout = findViewById(R.id.btn_logout)
+        btnLogout.setOnClickListener {
+            // Сброс состояния авторизации
+            sharedPrefHelper.setLoginStatus(false)
+
+            // Очистка данных пользователя (если нужно)
+            sharedPrefHelper.clearUserData()
+
+            // Переход на экран логина
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish() // Закрыть текущую активность
+        }
+
+        // Добавление элементов для RecyclerView
         val mainItems = mutableListOf<MainItem>()
         mainItems.add(
             MainItem(
@@ -80,6 +107,20 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun checkLoginStatus() {
+        val isLoggedIn = sharedPrefHelper.getLoginStatus()
+
+        // Если пользователь не авторизован, показываем сообщение и направляем на экран логина
+        if (!isLoggedIn) {
+            Toast.makeText(this, "Вы не авторизованы! Пожалуйста, войдите в систему.", Toast.LENGTH_SHORT).show()
+
+            // Открыть экран логина
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish() // Закрыть текущую активность, чтобы пользователь не мог вернуться
+        }
+    }
+
     private inner class MainAdapter(
         private val mainItems: List<MainItem>,
         private val onItemClickListener: (Int) -> Unit,
@@ -112,10 +153,7 @@ class MainActivity : AppCompatActivity() {
                 container.setOnClickListener {
                     onItemClickListener.invoke(item.id)
                 }
-
             }
-
         }
     }
-
 }

@@ -8,11 +8,41 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <!-- Сообщение о том, что пользователь не авторизован -->
+    <TextView
+        android:id="@+id/login_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вы не авторизованы! Пожалуйста, войдите в систему."
+        android:textColor="@android:color/black"
+        android:visibility="gone"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         tools:listitem="@layout/main_item" />
+
+    <!-- Контейнер для кнопок, чтобы они располагались внизу -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:paddingBottom="20dp">
+
+        <!-- Кнопка для выхода из системы -->
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выйти"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center" />
+    </FrameLayout>
 
 
 </LinearLayout>

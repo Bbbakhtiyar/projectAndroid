@@ -3,7 +3,7 @@ package co.baha.fitnesstracker.model
 import androidx.room.TypeConverter
 import java.util.*
 
-object DateConverter {
+class DateConverter {
 
     @TypeConverter
     fun toDate(dateLong: Long?): Date? {
