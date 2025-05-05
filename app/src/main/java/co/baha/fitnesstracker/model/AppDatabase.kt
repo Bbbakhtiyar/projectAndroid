@@ -22,11 +22,26 @@ abstract class AppDatabase : RoomDatabase() {
         fun getDatabase(context: Context): AppDatabase {
             return if (INSTANCE == null) {
                 synchronized(this) {
+                    val migration_1_2 = object : Migration(1, 2) {
+                        override fun migrate(database: SupportSQLiteDatabase) {
+                            // Миграция: создание таблицы WaterTracker
+                            database.execSQL("""
+                                CREATE TABLE IF NOT EXISTS `WaterTracker` (
+                                    `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+                                    `amount` REAL NOT NULL, 
+                                    `date` INTEGER NOT NULL
+                                )
+                            """)
+                        }
+                    }
+
                     INSTANCE = Room.databaseBuilder(
                         context.applicationContext,
                         AppDatabase::class.java,
                         "fitness_tracker"
-                    ).build()
+                    )
+                        .addMigrations(migration_1_2)  // Добавляем миграцию
+                        .build()
                 }
                 INSTANCE as AppDatabase
             } else {

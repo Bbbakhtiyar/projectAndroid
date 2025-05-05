@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         // Проверка состояния авторизации
         checkLoginStatus()
 
-        // Инициализация кнопки выхода
         btnLogout = findViewById(R.id.btn_logout)
         btnLogout.setOnClickListener {
             // Сброс состояния авторизации
@@ -110,14 +109,13 @@ class MainActivity : AppCompatActivity() {
     private fun checkLoginStatus() {
         val isLoggedIn = sharedPrefHelper.getLoginStatus()
 
-        // Если пользователь не авторизован, показываем сообщение и направляем на экран логина
         if (!isLoggedIn) {
             Toast.makeText(this, "Вы не авторизованы! Пожалуйста, войдите в систему.", Toast.LENGTH_SHORT).show()
 
-            // Открыть экран логина
+
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-            finish() // Закрыть текущую активность, чтобы пользователь не мог вернуться
+            finish()
         }
     }
 
