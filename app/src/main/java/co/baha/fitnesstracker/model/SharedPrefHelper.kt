@@ -43,7 +43,7 @@ class SharedPrefHelper(context: Context) {
         val editor = sharedPreferences.edit()
         editor.remove("username")
         editor.remove("password")
-        editor.remove("isLoggedIn") // Очистить статус авторизации
+        editor.remove("isLoggedIn")
         editor.apply()
     }
 }

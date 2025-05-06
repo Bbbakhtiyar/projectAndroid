@@ -24,27 +24,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Инициализация SharedPrefHelper
         sharedPrefHelper = SharedPrefHelper(this)
 
-        // Проверка состояния авторизации
         checkLoginStatus()
 
         btnLogout = findViewById(R.id.btn_logout)
         btnLogout.setOnClickListener {
-            // Сброс состояния авторизации
             sharedPrefHelper.setLoginStatus(false)
 
-            // Очистка данных пользователя (если нужно)
             sharedPrefHelper.clearUserData()
 
-            // Переход на экран логина
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-            finish() // Закрыть текущую активность
+            finish()
         }
 
-        // Добавление элементов для RecyclerView
         val mainItems = mutableListOf<MainItem>()
         mainItems.add(
             MainItem(

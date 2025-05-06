@@ -31,19 +31,15 @@ class LoginActivity : AppCompatActivity() {
         btnRegisterLink = findViewById(R.id.btn_register_link)
         btnLogout = findViewById(R.id.btn_logout)
 
-        // Проверка состояния логина
         if (sharedPrefHelper.getLoginStatus()) {
-            // Если пользователь авторизован, показываем кнопку выхода
             btnLogout.visibility = View.VISIBLE
-            edtUsername.isEnabled = false // Блокируем поля ввода
+            edtUsername.isEnabled = false
             edtPassword.isEnabled = false
-            btnLogin.isEnabled = false // Блокируем кнопку входа
+            btnLogin.isEnabled = false
         } else {
-            // Если пользователь не авторизован, скрываем кнопку выхода
             btnLogout.visibility = View.GONE
         }
 
-        // Обработчик клика по кнопке "Войти"
         btnLogin.setOnClickListener {
             val inputUsername = edtUsername.text.toString().trim()
             val inputPassword = edtPassword.text.toString().trim()
@@ -61,9 +57,8 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        // Переход на экран регистрации
         btnRegisterLink.setOnClickListener {
-            Log.d("LoginActivity", "Register button clicked")  // Лог для проверки
+            Log.d("LoginActivity", "Register button clicked")
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
@@ -71,13 +66,12 @@ class LoginActivity : AppCompatActivity() {
 
         // Обработчик кнопки "Выйти"
         btnLogout.setOnClickListener {
-            sharedPrefHelper.setLoginStatus(false) // Устанавливаем статус "не авторизован"
-            sharedPrefHelper.clearUserData() // Очищаем данные пользователя
+            sharedPrefHelper.setLoginStatus(false)
+            sharedPrefHelper.clearUserData()
 
-            // Перенаправление на экран логина
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-            finish() // Закрываем текущую активность
+            finish()
         }
     }
 }

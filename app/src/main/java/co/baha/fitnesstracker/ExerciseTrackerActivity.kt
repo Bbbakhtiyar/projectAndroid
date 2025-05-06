@@ -38,7 +38,7 @@ class ExerciseTrackerActivity : AppCompatActivity() {
         resetButton.setOnClickListener {
             // Обнуляем состояние всех чекбоксов
             exercises.forEach { it.isDone = false }
-            adapter.notifyDataSetChanged()  // Перерисовываем RecyclerView
+            adapter.notifyDataSetChanged()
         }
     }
 }

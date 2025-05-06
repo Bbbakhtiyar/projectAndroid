@@ -40,7 +40,7 @@ abstract class AppDatabase : RoomDatabase() {
                         AppDatabase::class.java,
                         "fitness_tracker"
                     )
-                        .addMigrations(migration_1_2)  // Добавляем миграцию
+                        .addMigrations(migration_1_2)
                         .build()
                 }
                 INSTANCE as AppDatabase
